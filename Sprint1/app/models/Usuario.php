@@ -1,5 +1,4 @@
 <?php
-
 class Usuario
 {
     public $id;
@@ -7,16 +6,24 @@ class Usuario
     public $clave;
     public $cargoUsuario;
     public $estado;
+    public $esAdmin;
+    public $idArea;
+    public $fechaAlta;
+    public $fechaBaja;
 
     public function crearUsuario()
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO usuarios (usuario, clave, cargo, estado) VALUES (:nombreUsuario, :clave, :cargoUsuario, :estado)");
+        $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO usuarios (usuario, clave, cargo, estado, administrador, idArea, fechaAlta, fechaBaja) VALUES 
+        (:nombreUsuario, :clave, :cargoUsuario, :estado, :esAdmin, :idArea, :fechaAlta, :fechaBaja");
         $claveHash = password_hash($this->clave, PASSWORD_DEFAULT);
         $consulta->bindValue(':nombreUsuario', $this->nombreUsuario, PDO::PARAM_STR);
         $consulta->bindValue(':clave', $claveHash);
         $consulta->bindValue(':cargoUsuario', $this->cargoUsuario, PDO::PARAM_STR);
-        $consulta->bindValue(':estado', true);
+        $consulta->bindValue(':estado', "Activo");
+        $consulta->bindValue(':esAdmin', $this->esAdmin);
+        $consulta->bindValue(':idArea', $this->idArea, PDO::PARAM_INT);
+        $consulta->bindValue(':fechaAlta', date('Y-m-d'));
         $consulta->execute();
 
         return $objAccesoDatos->obtenerUltimoId();
@@ -25,7 +32,7 @@ class Usuario
     public static function obtenerTodos()
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("SELECT id, usuario, clave, cargo, estado FROM usuarios");
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM usuarios");
         $consulta->execute();
 
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuario');

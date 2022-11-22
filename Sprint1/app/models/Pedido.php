@@ -3,19 +3,17 @@ class Pedido
 {
     public $codigo;
     public $idMesa;
-    public $idProducto;
     public $estadoPedido;
     public $nombreCliente;
-    public $imagenPedido;
-    public $arrayComidas;             
+    public $imagenPedido;        
     public $precioFinal;
 
-    public function crearUsuario()
+    public function crearPedido()
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO pedidos (codigo, idMesa, estadoPedido, nombreCliente, imagenPedido, precioFinal)
          VALUES (:codigo, :idMesa, :estadoPedido, :nombreCliente, :imagenPedido, :precioFinal)");
-        $consulta->bindValue(':codigo', $this->codigo, PDO::PARAM_INT);
+        $consulta->bindValue(':codigo', $this->codigo, PDO::PARAM_STR);
         $consulta->bindValue(':idMesa', $this->idMesa, PDO::PARAM_INT);
         $consulta->bindValue(':estadoPedido', "Pendiente");
         $consulta->bindValue(':nombreCliente', $this->nombreCliente, PDO::PARAM_STR);

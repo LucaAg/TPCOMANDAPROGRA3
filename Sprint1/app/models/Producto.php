@@ -3,7 +3,7 @@ class Producto
 {
     public $id;
     public $idArea;
-    //public $pedidoCodigo;
+    public $idPedido;
     public $estadoProducto;
     public $nombreProducto;
     public $precio;
@@ -11,18 +11,19 @@ class Producto
     public $horaFinalizado;
     public $duracion;
 
-    public function crearUsuario()
+    public function crearProducto()
     {
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
-        $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO productos (idArea, pedidoCodigo, nombreProducto, precio, horaInicio, horaFinalizado, duracion)
-         VALUES (:idArea, :pedidoCodigo, :nombreProducto, :precio, :horaInicio, :horaFinalizado, :duracion)");
-        $consulta->bindValue(':idArea', $this->idArea, PDO::PARAM_INT);
-        $consulta->bindValue(':pedidoCodigo', $this->idMesa, PDO::PARAM_INT);
-        $consulta->bindValue(':estadoPedido', "Pendiente");
-        $consulta->bindValue(':nombreCliente', $this->nombreCliente, PDO::PARAM_STR);
-        $consulta->bindValue(':imagenPedido', $this->imagenPedido, PDO::PARAM_STR);
-        $consulta->bindValue(':precioFinal', $this->precioFinal, PDO::PARAM_STR);
-        $consulta->bindValue(':precioFinal', $this->precioFinal, PDO::PARAM_STR);
+        $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO productos (idArea, idPedido, estadoProducto, nombreProducto, precio, horaInicio, horaFinalizado, duracion)
+         VALUES (:idArea, :idPedido, :estadoProducto, :nombreProducto, :precio, :horaInicio, :horaFinalizado, :duracion)");
+        $consulta->bindValue(':idArea', $this->idArea, PDO::PARAM_INT);       
+        $consulta->bindValue(':estadoProducto', "Pendiente");
+        $consulta->bindValue(':idPedido', $this->idPedido, PDO::PARAM_INT);
+        $consulta->bindValue(':nombreProducto', $this->nombreProducto, PDO::PARAM_STR);
+        $consulta->bindValue(':precio', $this->precio, PDO::PARAM_INT);
+        $consulta->bindValue(':horaInicio', date('H-i-s'));
+        $consulta->bindValue(':horaFinalizado', $this->horaFinalizado);
+        $consulta->bindValue(':duracion', $this->duracion);
         $consulta->execute();
 
         return $objAccesoDatos->obtenerUltimoId();
