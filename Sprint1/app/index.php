@@ -15,9 +15,13 @@ require __DIR__ . '/../vendor/autoload.php';
 require_once './db/AccesoDatos.php';
 // require_once './middlewares/Logger.php';
 
-require_once './controllers/UsuarioController.php';
+require_once './controllers/EmpleadoController.php';
 require_once './controllers/LoginController.php';
-require_once './middlewares/MWPerfil.php';
+require_once './controllers/ArticuloController.php';
+require_once './controllers/MesaController.php';
+require_once './controllers/ComandaController.php';
+require_once './controllers/EncargoController.php';
+//require_once './middlewares/MWPerfil.php';
 
 // Load ENV
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -36,15 +40,37 @@ $app->addErrorMiddleware(true, true, true);
 $app->addBodyParsingMiddleware();
 
 // Routes
-$app->group('/usuarios', function (RouteCollectorProxy $group) {
-    $group->get('[/]', \UsuarioController::class . ':TraerTodos');
-    $group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-    $group->post('[/]', \UsuarioController::class . ':CargarUno');
-    $group->delete('/{usuarioId}', \UsuarioController::class . ':BorrarUno');
-    $group->put('/{usuarioId}', \UsuarioController::class . ':ModificarUno');
-  })->add(new MWPerfil());
+$app->group('/empleados', function (RouteCollectorProxy $group) {
+    $group->get('[/]', \EmpleadoController::class . ':TraerTodos');
+    $group->get('/{usuario}', \EmpleadoController::class . ':TraerUno');
+    $group->post('[/]', \EmpleadoController::class . ':CargarUno');
+    $group->delete('/{usuarioId}', \EmpleadoController::class . ':BorrarUno');
+    $group->put('/{usuarioId}', \EmpleadoController::class . ':ModificarUno');
+  });
 
-//)->add(new MWPerfil()
+$app->group('/articulos', function (RouteCollectorProxy $group)
+{
+  $group->post('[/]', \ArticuloController::class . ':CargarUno');
+});
+
+$app->group('/mesas', function (RouteCollectorProxy $group)
+{
+  $group->put('/{mesaCodigo}', \MesaController::class . ':actualizarMesa');
+});
+
+
+$app->group('/comandas', function (RouteCollectorProxy $group)
+{
+  $group->post('/', \ComandaController::class . ':CargarUno');
+  $group->get('/traerTodos', \ComandaController::class . ':TraerTodos');
+});
+
+$app->group('/encargos', function (RouteCollectorProxy $group)
+{
+  $group->post('/', \EncargoController::class . ':CargarUno');
+  $group->post('/tomarEncargo', \EncargoController::class . ':TomarEncargo');
+  $group->post('/terminarEncargo', \EncargoController::class . ':TerminarEncargo');
+});
 
 $app->post('/login', \LoginController::class . ':UsuarioLogin');
 

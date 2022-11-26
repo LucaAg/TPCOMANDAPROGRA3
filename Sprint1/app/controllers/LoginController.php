@@ -1,39 +1,47 @@
 <?php
 require_once './models/AutenticadorJWT.php';
-require_once './models/Usuario.php';
+require_once './models/Empleado.php';
 
 class LoginController
 {
     public function UsuarioLogin($request, $response, $args)
     {
         $parametros = $request->getParsedBody();
-        if(isset($parametros['usuario']) && isset($parametros['clave']))
-        {   
-            $payload = json_encode(array('Error' => "Error al logueaerse!"));
-            $clave = $parametros['clave'];
-            $usuario = Usuario::obtenerUsuario($parametros['usuario']);           
-            if(!is_null($usuario))
-            {
-                if(password_verify($clave, $usuario->clave))
+        $payload = json_encode(array('Error' => "Faltan datos!"));
+        try
+        {
+            if(isset($parametros['id']) && isset($parametros['clave']))
+            {   
+                $payload = json_encode(array('Error' => "Error al logueaerse!"));
+                $clave = $parametros['clave'];
+                $usuario = Empleado::obtenerEmpleadoId($parametros['id']);                      
+                if(!is_null($usuario))
+                {                   
+                    if(password_verify($clave, $usuario->clave))
+                    {
+                        $datos = array(
+                            'id' => $usuario->id,
+                            'tipo' => $usuario->tipoEmpleado
+                        );
+                        $token = AutentificadorJWT::CrearToken($datos);
+                        $payload = json_encode(array("Login" => "Exitoso!","Empleado" => $usuario->nombreCompleto, "Cargo" => $usuario->tipoEmpleado,
+                    "JWT" => $token));
+                        $response = $response->withStatus(200);
+                    }
+                }
+                else
                 {
-                    $datos = array(
-                        'usuario' => $usuario->usuario,
-                        'perfil' => $usuario->perfil
-                    );
-                    $token = AutentificadorJWT::CrearToken($datos); //, 'response' => 'Correcto' => $usuario->perfil;
-                    $payload = json_encode(array("Login exitoso" => "Se ha logueado correctamente!",
-                "JWT" => $token));
-                    $response = $response->withStatus(200);
+                    throw new Exception("El usuario no existe!");
                 }
             }
-            else
-            {
-                $payload = json_encode(array('Error' => "El usuario no existe!"));
-            }
         }
-        else{
-            $payload = json_encode(array('Error' => "Faltan datos!"));
+        catch(Exception $ex)
+        {
+            $payload = json_encode(array("Error" => $ex->getMessage()));
+            $response->getBody()->write($payload);
+            $response = $response->withStatus(401);
         }
+      
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');
     }

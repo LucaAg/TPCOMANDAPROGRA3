@@ -1,34 +1,29 @@
 <?php
 require_once './models/Mesa.php';
+require_once './models/Empleado.php';
 class MesaController extends Mesa
 {
-    public function cargarUno($request, $response, $args)
+   /* public function cargarUno($request, $response, $args)
     {
         $parametros = $request->getParsedBody();
-        $payload = json_encode(array("Error" => "Faltan datos!"));
-        if(isset($_POST['idUsuario']))
+        if(isset($_POST['idMozo']) && isset($_POST['estadoMesa']))
         {
-          $idUsuario = $parametros['idUsuario'];
-
-          // Creamos el usuario
-          $nuevaMesa = new Mesa();
-          $nuevaMesa->idUsuario = $idUsuario;
-          $nuevaMesa->codigoMesa = rand(10000,99999);
-          
-          if($nuevaMesa->crearMesa())
-          {
-            $payload = json_encode(array("Mesa" => "Mesa dada de alta exitosamente!"));
-          }
-          else
-          {
-            $payload = json_encode(array("Error" => "Error al crear la mesa!"));
-          }
+            $nuevaMesa = new Mesa();
+        
+            if($nuevaMesa->crearMesa())
+            {
+                $payload = json_encode(array("Mesa" => "Mesa dada de alta exitosamente!"));
+            }
+            else
+            {
+                $payload = json_encode(array("Error" => "Error al crear la mesa!"));
+            }     
         }     
        
         $response->getBody()->write($payload);
         return $response
           ->withHeader('Content-Type', 'application/json');
-    }
+    }*/
 
     public function traerTodos($request, $response, $args)
     {
@@ -42,13 +37,13 @@ class MesaController extends Mesa
 
     public function traerPorId($request, $response, $args)
     {
-      $id = $args['id'];
+      $codigo = $args['codigo'];
       $payload = json_encode(array("Error" => "Faltan datos"));
       if(isset($id))
       {          
         if(!is_null($id))
         {
-          $mesaBuscada = Mesa::obtenerMesaId(intval($id));
+          $mesaBuscada = Mesa::obtenerMesaCodigo(intval($id));
           if($mesaBuscada)
           {
             $payload = json_encode(array("Mesa" => $mesaBuscada));
@@ -100,8 +95,41 @@ class MesaController extends Mesa
         return $response
             ->withHeader('Content-Type', 'application/json');
     }
+
+    public static function actualizarMesa($request, $response, $args)
+    {
+        $parametros = $request->getParsedBody();
+        $codigo = $args['mesaCodigo'];    
+        if(isset($parametros['estadoMesa']))
+        {
+            $estado = $parametros['estadoMesa'];           
+            $mesaBuscada = Mesa::obtenerMesaCodigo($codigo);
+            if(!is_bool($mesaBuscada))
+            {    
+                if(Mesa::actualizarEstadoMesa($mesaBuscada,$estado))
+                {
+                    $payload = json_encode(array( "Actualizar mesa" => "Mesa actualizada exitosamente!"));
+                }
+                else
+                {
+                    $payload = json_encode(array( "Actualizar mesa" => "Error al Actualizar la mesa!"));
+                } 
+            }  
+            else
+            {
+                $payload = json_encode(array("Error" => "Error inesperado"));
+            }               
+        }
+        else
+        {
+            $payload = json_encode(array("Error" => "Faltan datos!"));
+        }    
+        $response->getBody()->write($payload);
+        return $response
+            ->withHeader('Content-Type', 'application/json');
+    }
     
-    public static function modificarEstadoMesa($request, $response, $args)
+   /* public static function modificarEstadoMesa($request, $response, $args)
     {
         $parametros = $request->getParsedBody();
         $id = $args['mesaId'];
@@ -139,7 +167,7 @@ class MesaController extends Mesa
         $response->getBody()->write($payload);
         return $response
             ->withHeader('Content-Type', 'application/json');
-    }
+    }*/
 
     public static function validarEstadoMesa($estado)
     {

@@ -18,12 +18,12 @@ class MWPerfil
                 json_encode(array('datos'=>AutentificadorJWT::VerificarToken($token)));
                 
                 $datosToken = AutentificadorJWT::ObtenerData($token);
-                if($datosToken->perfil == "Admin")
+                if($datosToken->tipoEmpleado == "Mozo")
                 {
                     $response = $handler->handle($request);
                 }
                 else{
-                    throw new Exception("Solo admins estan autorizados!");
+                    throw new Exception("Solo los mozos estan autorizados!");
                 }
             }
             else
