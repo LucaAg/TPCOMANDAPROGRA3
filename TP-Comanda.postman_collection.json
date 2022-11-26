@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "abaea180-00de-4b41-9611-3a3fdf0b488c",
+		"name": "TP-Comanda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21181459"
+	},
+	"item": [
+		{
+			"name": "AltaSocio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Socio",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "luca",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Luca Agnoli",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "Si",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaMozo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Mozo",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Juan Benitez",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "No",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaBartender",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Bartender",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "Julia",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Julia Almada",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "No",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaCocinero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Cocinero",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Hernan Golondrina",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaCervecero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "cervecero",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "andrea",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Andrea Sakazar",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaArticulo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Cocinero",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Hernan Golondrina",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaMilanesaFritas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "mesaCodigo",
+							"value": "90000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "estadoMesa",
+							"value": "Cliente esperando ser atendido",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/mesas/90000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"mesas",
+						"90000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaGinTonic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombreArticulo",
+							"value": "Gin Tonic",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "500",
+							"type": "text"
+						},
+						{
+							"key": "cargoEmpleado",
+							"value": "Bartender",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/articulos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"articulos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaMesa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombreArticulo",
+							"value": "Milanesa c/ fritas",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "600",
+							"type": "text"
+						},
+						{
+							"key": "cargoEmpleado",
+							"value": "Cocinero",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/articulos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"articulos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaComanda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombreArticulo",
+							"value": "Cerveza Guinness",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "codigoMesa",
+							"value": "90000",
+							"type": "text"
+						},
+						{
+							"key": "nombreCliente",
+							"value": "Ariadna",
+							"type": "text"
+						},
+						{
+							"key": "imagenComanda",
+							"type": "file",
+							"src": "/C:/Users/Nahue/Downloads/banan.jfif"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/comandas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"comandas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginCocinero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6",
+							"disabled": true
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaEncargo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigoComanda",
+							"value": "A1uw6",
+							"type": "text"
+						},
+						{
+							"key": "idArticulo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "idEmpleado",
+							"value": "6",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TomarEncargo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEncargo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "En preparacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/tomarEncargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"tomarEncargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TerminarEncargo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEncargo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "Listo para servir",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/terminarEncargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"terminarEncargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerComandas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEncargo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "En preparacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/comandas/traerTodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"comandas",
+						"traerTodos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EntregarPedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEncargo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "En preparacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/tomarEncargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"tomarEncargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:666/encargos/terminarEncargo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/terminarEncargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"terminarEncargo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
