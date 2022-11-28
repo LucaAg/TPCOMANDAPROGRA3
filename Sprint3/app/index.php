@@ -21,6 +21,7 @@ require_once './controllers/ArticuloController.php';
 require_once './controllers/MesaController.php';
 require_once './controllers/ComandaController.php';
 require_once './controllers/EncargoController.php';
+require_once './controllers/EncuestaController.php';
 
 require_once './middlewares/MWPerfilSocio.php';
 require_once './middlewares/MWPerfilMozo.php';
@@ -55,7 +56,7 @@ $app->group('/articulos', function (RouteCollectorProxy $group)
 {
   $group->post('[/]', \ArticuloController::class . ':CargarUno')->add(new MWPerfilSocio());
   $group->get('[/]', \ArticuloController::class . ':TraerTodos');
-  $group->post('/crearArchivoCsvArticulos', \ArticuloController::class . ':crearArchivoCsvArticulos');
+  $group->get('/crearArchivoCsvArticulos', \ArticuloController::class . ':crearArchivoCsvArticulos');
   $group->post('/cargarTablaSqlConCsv', \ArticuloController::class . ':cargarTablaSqlConCsv');
 });
 
@@ -86,6 +87,8 @@ $app->group('/encargos', function (RouteCollectorProxy $group)
   $group->get('[/]', \EncargoController::class . ':TraerTodos')->add(new MWPerfilSocio());
   $group->get('/traerPendientes', \EncargoController::class . ':obtenerEncargos');
 })->add(new MWLogin());
+
+$app->post('/encuesta', \EncuestaController::class . ':CargarEncuesta');
 
 $app->post('/login', \LoginController::class . ':UsuarioLogin');
 

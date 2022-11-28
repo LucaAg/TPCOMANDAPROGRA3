@@ -127,12 +127,12 @@ class ArticuloController extends Articulo implements IApiUsable
         if(Csv::cargarTablaArticulosCSv($archivo))
         {       
           readfile($archivo);
-          
+
           $respon = $response->withHeader('Content-Type', 'text/csv');
         }
         else
         {
-          $respon = $response->withHeader('Content-Type', 'apllication/json');
+          $respon = $response->withHeader('Content-Type', 'application/json');
           $response->getBody()->write(json_encode(array("Error" => "La informacion ingresada es incorrecta!")));
         }
       }

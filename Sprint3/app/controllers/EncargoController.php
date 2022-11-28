@@ -13,6 +13,7 @@ class EncargoController extends Encargo implements IApiUsable
     public function CargarUno($request, $response, $args)
     {
         $parametros = $request->getParsedBody();
+        $payload = json_encode(array("Error" => "Faltan datos!"));
         if(isset($_POST['codigoComanda']) && isset($_POST['idArticulo']))
         { 
           $codigoComanda = $parametros['codigoComanda'];
