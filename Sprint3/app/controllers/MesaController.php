@@ -206,5 +206,13 @@ class MesaController extends Mesa
         }
         return $todoOk;
     }
+
+    public static function obtenerMesaMasUtilizada($request,$response,$args)
+    {
+        $payload = json_encode(array("mensaje" => Comanda::obtenerMesaMasUsada()));
+        $response->getBody()->write($payload);
+        return $response
+            ->withHeader('Content-Type', 'application/json');
+    }
 }
 ?>

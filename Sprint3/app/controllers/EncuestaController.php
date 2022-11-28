@@ -101,5 +101,17 @@ class EncuestaController extends Encuesta
         }
         return $todoOk;
     }
+
+    public static function obtenerComentariosPositivos($request, $response, $args)
+    {
+        $payload = json_encode(array("Comentarios" => Encuesta::obtenerMejoresComentarios()));
+        if(is_bool($payload))
+        {
+            $payload = json_encode(array("Error" => "Error inesperado al cagar los comentarios!"));
+        }
+        $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');  
+    }
     
 }

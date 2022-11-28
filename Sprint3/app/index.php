@@ -65,6 +65,7 @@ $app->group('/mesas', function (RouteCollectorProxy $group)
   $group->put('/{mesaCodigo}', \MesaController::class . ':actualizarMesa')->add(new MWPerfilMozo());
   $group->put('/cargar/mesa', \MesaController::class . ':cargarUno')->add(new MWPerfilMozo());
   $group->get('/', \MesaController::class . ':traerTodos')->add(new MWPerfilMozo());
+  $group->get('/mesaMasUsada', \MesaController::class . ':obtenerMesaMasUtilizada')->add(new MWPerfilSocio());
   $group->put('/cerrar/mesa', \MesaController::class . ':CerrarMesa')->add(new MWPerfilSocio());
 });
 
@@ -88,7 +89,12 @@ $app->group('/encargos', function (RouteCollectorProxy $group)
   $group->get('/traerPendientes', \EncargoController::class . ':obtenerEncargos');
 })->add(new MWLogin());
 
-$app->post('/encuesta', \EncuestaController::class . ':CargarEncuesta');
+$app->group('/encuesta', function (RouteCollectorProxy $group)
+{
+  $group->post('/encuesta', \EncuestaController::class . ':CargarEncuesta');
+  $group->get('/obtenerComentariosPositivos', \EncuestaController::class . ':obtenerComentariosPositivos')->add(new MWPerfilSocio());
+})->add(new MWLogin());
+
 
 $app->post('/login', \LoginController::class . ':UsuarioLogin');
 

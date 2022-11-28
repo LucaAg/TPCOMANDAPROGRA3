@@ -149,5 +149,15 @@ class Comanda
 
         return $consulta->fetchColumn();
     }
+
+    public static function obtenerMesaMasUsada()
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT codigoMesa FROM comandas
+                GROUP BY codigoMesa
+                HAVING COUNT(*)>0");
+        $consulta->execute();
+        return $consulta->fetchAll(PDO::FETCH_CLASS,'stdClass');
+    }
 }
 ?>
