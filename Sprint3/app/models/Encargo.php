@@ -121,6 +121,7 @@ class Encargo
 
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'stdClass');
     }
+
     
     public static function obtenerEncargosPendientes()
     {
@@ -130,6 +131,26 @@ class Encargo
         $consulta->execute();
 
         return $consulta->fetchAll(PDO::FETCH_CLASS, 'Encargo');
+    }
+
+    public static function obtenerEncargosPreparacion()
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM encargos WHERE estadoEncargo = :estadoEncargo");
+        $consulta->bindValue(':estadoEncargo', "En preparacion");
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'stdClass');
+    }
+
+    public static function obtenerEncargosListosParaSevir()
+    {
+        $objAccesoDatos = AccesoDatos::obtenerInstancia();
+        $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM encargos WHERE estadoEncargo = :estadoEncargo");
+        $consulta->bindValue(':estadoEncargo', "Listo para servir");
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_CLASS, 'stdClass');
     }
     public static function obtenerUno()
     {

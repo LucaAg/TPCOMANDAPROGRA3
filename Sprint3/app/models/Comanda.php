@@ -155,9 +155,9 @@ class Comanda
         $objAccesoDatos = AccesoDatos::obtenerInstancia();
         $consulta = $objAccesoDatos->prepararConsulta("SELECT codigoMesa FROM comandas
                 GROUP BY codigoMesa
-                HAVING COUNT(*)>0");
+                HAVING COUNT(*)>1");
         $consulta->execute();
-        return $consulta->fetchAll(PDO::FETCH_CLASS,'stdClass');
+        return $consulta->fetchObject('stdClass');
     }
 }
 ?>

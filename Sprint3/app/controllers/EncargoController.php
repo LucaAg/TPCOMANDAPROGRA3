@@ -286,18 +286,49 @@ class EncargoController extends Encargo implements IApiUsable
         $platosRestantes = count($encargosPorCodigo) - count($encargosPorEstadoCodigo);
         if($platosRestantes == 0)
         {
-          Encargo::modificarEstadoPorComanda($codigoComanda,$estado);
+          Encargo::modificarEstadoPorComanda($codigoComanda,$estado);       
           $comanda = Comanda::obtenerComandaCodigo($codigoComanda);
-          $mesa = Mesa::obtenerMesaCodigo($comanda->codigoMesa);
-          Comanda::actualizarEstadoComanda($comanda,"Pedido entregado");
-          Mesa::actualizarEstadoMesa($mesa,"Con cliente comiendo");
-          $payload = json_encode(array("mensaje" => "Se ha concretado la entrega de la comanda $codigoComanda"));
+          if(!is_bool($comanda) )
+          {
+            $mesa = Mesa::obtenerMesaCodigo($comanda->codigoMesa);
+            if(!is_bool($mesa) )
+            {
+              Comanda::actualizarEstadoComanda($comanda,"Pedido entregado");
+              Mesa::actualizarEstadoMesa($mesa,"Con cliente comiendo");
+              $payload = json_encode(array("mensaje" => "Se ha concretado la entrega de la comanda $codigoComanda"));
+            }
+            else
+            {
+              $payload = json_encode(array("Error" => "Error en la mesa"));
+            }         
+          }
+          else
+          {
+            $payload = json_encode(array("Error" => "Error en la comanda"));
+          }
+         
         }
         else
         {
           $payload = json_encode(array("Error" => "Faltan completar $platosRestantes encargo(s) para entregar el pedido!"));
         }
       }
+      $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
+
+    public static function TraerEnPreparacion($request, $response, $args)
+    {
+      $payload = json_encode(array("mensaje" => Encargo::obtenerEncargosPreparacion()));
+      $response->getBody()->write($payload);
+        return $response
+          ->withHeader('Content-Type', 'application/json');
+    }
+
+    public static function TraerListoParaServir($request, $response, $args)
+    {
+      $payload = json_encode(array("mensaje" => Encargo::obtenerEncargosListosParaSevir()));
       $response->getBody()->write($payload);
         return $response
           ->withHeader('Content-Type', 'application/json');

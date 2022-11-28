@@ -166,7 +166,7 @@ class MesaController extends Mesa
           $mesa = Mesa::obtenerMesaCodigo($comanda->codigoMesa);
           if(!is_bool($mesa))
           { 
-            if($mesa->estado == "Con cliente pagando")
+            if($mesa->estadoMesa == "Con cliente pagando")
             {
                 $mesa->idMozo = NULL;
                 Mesa::actualizarEstadoMesa($mesa,"Cerrado");
@@ -214,5 +214,6 @@ class MesaController extends Mesa
         return $response
             ->withHeader('Content-Type', 'application/json');
     }
+
 }
 ?>

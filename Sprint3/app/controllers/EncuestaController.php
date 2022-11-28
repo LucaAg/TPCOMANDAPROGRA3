@@ -36,38 +36,54 @@ class EncuestaController extends Encuesta
                 {
                     if(EncuestaController::checkearValoresEncuesta($puntajeCocinero,$puntajeMesa,$puntajeMozo,$puntajeResto))
                     {
-                        if($comanda->codigoMesa == $mesa->codigoMesa)
+                        if(strlen($descripcion) < 67 && strlen($descripcion) > 9) 
                         {
-                            if($comanda->estadoComanda == "Finalizada")
+                            if($comanda->codigoMesa == $mesa->codigoMesa)
                             {
-                                $encuesta = new Encuesta();
-                                $encuesta->codigoComanda = $codigoComanda;
-                                $encuesta->codigoMesa = $codigoMesa;
-                                $encuesta->puntajeMozo = $puntajeMozo;
-                                $encuesta->puntajeCocinero = $puntajeCocinero;
-                                $encuesta->puntajeMesa = $puntajeMesa;
-                                $encuesta->puntajeResto = $puntajeResto;
-                                $encuesta->promedio = round($promedio,2);
-                                $encuesta->descripcion = $descripcion;
-
-                                if(!is_bool($encuesta->crearEncuesta()))
+                                if($comanda->estadoComanda == "Finalizada")
                                 {
-                                    $payload = json_encode(array("mensaje" => "La encuesta de la mesa $codigoMesa se creo exitosamente!"));
+                                    if($mesa->estadoMesa == "Cerrado")
+                                    {
+                                        $encuesta = new Encuesta();
+                                        $encuesta->codigoComanda = $codigoComanda;
+                                        $encuesta->codigoMesa = $codigoMesa;
+                                        $encuesta->puntajeMozo = $puntajeMozo;
+                                        $encuesta->puntajeCocinero = $puntajeCocinero;
+                                        $encuesta->puntajeMesa = $puntajeMesa;
+                                        $encuesta->puntajeResto = $puntajeResto;
+                                        $encuesta->promedio = round($promedio,2);
+                                        $encuesta->descripcion = $descripcion;
+        
+                                        if(!is_bool($encuesta->crearEncuesta()))
+                                        {
+                                            $payload = json_encode(array("mensaje" => "La encuesta de la mesa $codigoMesa se creo exitosamente!"));
+                                        }
+                                        else
+                                        {
+                                            $payload = json_encode(array("Error" => "Error al crear la encuesta!"));
+                                        }
+                                    }
+                                    else
+                                    {
+                                        $payload = json_encode(array("Error" => "Error la mesa debe estar cerrada!"));
+                                    }
+                                   
                                 }
                                 else
                                 {
-                                    $payload = json_encode(array("Error" => "Error al crear la encuesta!"));
+                                    $payload = json_encode(array("Error" => "Luego de pagar la cuenta se habilita la encuesta!"));
                                 }
-                            }
+                            }   
                             else
                             {
-                                $payload = json_encode(array("Error" => "Luego de pagar la cuenta se habilita la encuesta!"));
+                                $payload = json_encode(array("Error" => "La mesa y la comanda no coinciden!"));
                             }
-                        }   
+                        }
                         else
                         {
-                            $payload = json_encode(array("Error" => "La mesa y la comanda no coinciden!"));
+                            $payload = json_encode(array("Error" => "Cantidad maxima permitida de caracteres es de 66 (Minimo 10)"));
                         }
+                       
                     }
                     else
                     {

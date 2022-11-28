@@ -64,7 +64,7 @@ $app->group('/mesas', function (RouteCollectorProxy $group)
 {
   $group->put('/{mesaCodigo}', \MesaController::class . ':actualizarMesa')->add(new MWPerfilMozo());
   $group->put('/cargar/mesa', \MesaController::class . ':cargarUno')->add(new MWPerfilMozo());
-  $group->get('/', \MesaController::class . ':traerTodos')->add(new MWPerfilMozo());
+  $group->get('/', \MesaController::class . ':traerTodos')->add(new MWPerfilSocio());
   $group->get('/mesaMasUsada', \MesaController::class . ':obtenerMesaMasUtilizada')->add(new MWPerfilSocio());
   $group->put('/cerrar/mesa', \MesaController::class . ':CerrarMesa')->add(new MWPerfilSocio());
 });
@@ -86,15 +86,17 @@ $app->group('/encargos', function (RouteCollectorProxy $group)
   $group->put('/terminarEncargo', \EncargoController::class . ':TerminarEncargo');
   $group->put('/entregarEncargos', \EncargoController::class . ':EntregarEncargos')->add(new MWPerfilMozo());
   $group->get('[/]', \EncargoController::class . ':TraerTodos')->add(new MWPerfilSocio());
-  $group->get('/traerPendientes', \EncargoController::class . ':obtenerEncargos');
+  $group->get('/traerPendientes', \EncargoController::class . ':obtenerEncargos')->add(new MWPerfilSocio());
+  $group->get('/traerPreparacion', \EncargoController::class . ':TraerEnPreparacion')->add(new MWPerfilSocio());
+  $group->get('/TraerListoParaServir', \EncargoController::class . ':TraerListoParaServir')->add(new MWPerfilMozo());
 })->add(new MWLogin());
 
 $app->group('/encuesta', function (RouteCollectorProxy $group)
 {
-  $group->post('/encuesta', \EncuestaController::class . ':CargarEncuesta');
   $group->get('/obtenerComentariosPositivos', \EncuestaController::class . ':obtenerComentariosPositivos')->add(new MWPerfilSocio());
 })->add(new MWLogin());
 
+$app->post('/generarEncuesta', \EncuestaController::class . ':CargarEncuesta');
 
 $app->post('/login', \LoginController::class . ':UsuarioLogin');
 
