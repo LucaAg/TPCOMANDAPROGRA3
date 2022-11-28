@@ -1,0 +1,1549 @@
+{
+	"info": {
+		"_postman_id": "abaea180-00de-4b41-9611-3a3fdf0b488c",
+		"name": "TP-Comanda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21181459"
+	},
+	"item": [
+		{
+			"name": "Login Socio Juana",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "101",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "juana",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Luca Agnoli",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "esSocio",
+							"value": "Si",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Socio Luca",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "luca",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Luca Agnoli",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "esSocio",
+							"value": "Si",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Mozo Julieta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "106",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "julieta",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Luca Agnoli",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "esSocio",
+							"value": "Si",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Mozo Juan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "102",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Luca Agnoli",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "esSocio",
+							"value": "Si",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Bartender",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "103",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "Julia",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Luca Agnoli",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "esSocio",
+							"value": "Si",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "103",
+							"disabled": true
+						},
+						{
+							"key": "clave",
+							"value": "julia",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaSocio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Socio",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "luca",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Luca Agnoli",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "Si",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaMozo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MTMwNjcsImV4cCI6MTY2OTU3MzA2NywiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMSwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.tLRjviSwK34cgNnbPSs3HlyAuw8nqySE4gIEaN7mtm4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Mozo",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Juan Benitez",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "No",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaBartender",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MTM2NDcsImV4cCI6MTY2OTU3MzY0NywiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.UNvR2sDoLrWzXjJofiLWDCk64ICXr-hhnOR-ZXQpOSA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Bartender",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "Julia",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Julia Almada",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "No",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaCocinero",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MTM2NDcsImV4cCI6MTY2OTU3MzY0NywiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.UNvR2sDoLrWzXjJofiLWDCk64ICXr-hhnOR-ZXQpOSA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Cocinero",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Hernan Golondrina",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "No",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaCervecero",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MTM2NDcsImV4cCI6MTY2OTU3MzY0NywiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.UNvR2sDoLrWzXjJofiLWDCk64ICXr-hhnOR-ZXQpOSA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Cervecero",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "andrea",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Andrea Sakazar",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "No",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaArticulo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tipoEmpleado",
+							"value": "Cocinero",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"type": "text"
+						},
+						{
+							"key": "nombreCompleto",
+							"value": "Hernan Golondrina",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaAgua",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombreArticulo",
+							"value": "Agua Villavicencio",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "cargoEmpleado",
+							"value": "Bartender",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/articulos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"articulos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerEmpleados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MTU1NjYsImV4cCI6MTY2OTU3NTU2NiwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.DySbfIB3LBmcpT2JaUSOuQ-IN1_PtdC8P7y8xSKg3pU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombreArticulo",
+							"value": "Agua Villavicencio",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "cargoEmpleado",
+							"value": "Bartender",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerMenu",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MTU1NjYsImV4cCI6MTY2OTU3NTU2NiwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.DySbfIB3LBmcpT2JaUSOuQ-IN1_PtdC8P7y8xSKg3pU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombreArticulo",
+							"value": "Agua Villavicencio",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "cargoEmpleado",
+							"value": "Bartender",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/articulos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"articulos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerMesas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MjA1OTMsImV4cCI6MTY2OTU4MDU5MywiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.X_4t3_cQni-NPIgUiidTQcV4yDP6jbIgIR_dEYm4p5k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombreArticulo",
+							"value": "Agua Villavicencio",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "cargoEmpleado",
+							"value": "Bartender",
+							"type": "text"
+						},
+						{
+							"key": "esSocio",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/mesas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"mesas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaMesa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MjAxMzMsImV4cCI6MTY2OTU4MDEzMywiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMiwidGlwbyI6Ik1vem8ifSwiYXBwIjoiUHJhY3RpY2EifQ.twJ3Cz8zJ-kCVtoFSXPSVy4dmKshDBjUKskS0vkl6Jg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigoMesa",
+							"value": "10003",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/mesas/cargar/mesa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"mesas",
+						"cargar",
+						"mesa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaComanda",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1OTg5NjgsImV4cCI6MTY2OTY1ODk2OCwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwNiwidGlwbyI6Ik1vem8ifSwiYXBwIjoiUHJhY3RpY2EifQ.BaozA7jb9gQpxFdF2qgEzKDqV5k2NKqT55gRGc7ykX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "codigoMesa",
+							"value": "10005",
+							"type": "text"
+						},
+						{
+							"key": "nombreCliente",
+							"value": "Jose lopez",
+							"type": "text"
+						},
+						{
+							"key": "imagenComanda",
+							"type": "file",
+							"src": "/C:/Users/Nahue/Downloads/rogel.jfif"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/comandas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"comandas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginCocinero Paula",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "108",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "paula",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6",
+							"disabled": true
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginCocinero Hernan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "104",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6",
+							"disabled": true
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginCervecero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "104",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6",
+							"disabled": true
+						},
+						{
+							"key": "clave",
+							"value": "hernan",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaEncargo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1OTI5NzEsImV4cCI6MTY2OTY1Mjk3MSwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMywidGlwbyI6IkJhcnRlbmRlciJ9LCJhcHAiOiJQcmFjdGljYSJ9.g5uqZcZMA9bGc3YSORZqB1WpyFUsRbvESUdn6WkbnqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigoComanda",
+							"value": "dy5CI",
+							"type": "text"
+						},
+						{
+							"key": "idArticulo",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "Ariadna",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/altaEncargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"altaEncargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TomarEncargo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1NjA0NDUsImV4cCI6MTY2OTYyMDQ0NSwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwNCwidGlwbyI6IkNvY2luZXJvIn0sImFwcCI6IlByYWN0aWNhIn0.w6ZK3JNYAKco8k_YY46zBTOO-yQet2UEhYVbAu9UTWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idEncargo",
+							"value": "1002",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "En preparacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/tomarEncargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"tomarEncargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TerminarEncargo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1NjA0NDUsImV4cCI6MTY2OTYyMDQ0NSwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwNCwidGlwbyI6IkNvY2luZXJvIn0sImFwcCI6IlByYWN0aWNhIn0.w6ZK3JNYAKco8k_YY46zBTOO-yQet2UEhYVbAu9UTWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idEncargo",
+							"value": "1002",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "Listo para servir",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/terminarEncargo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"terminarEncargo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerComandas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1MjQ2OTYsImV4cCI6MTY2OTU4NDY5NiwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.KmPwtP_0pfHKEop8SIGEc46I7W7sjNr4n89vM7Z7eZI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEncargo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "En preparacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/comandas/traerTodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"comandas",
+						"traerTodos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerEncargosPendientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1OTExMjUsImV4cCI6MTY2OTY1MTEyNSwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMiwidGlwbyI6Ik1vem8ifSwiYXBwIjoiUHJhY3RpY2EifQ.OWDheGvwBk-4CJf0X9CzWuX-e_1wekMybZdUckZ4F2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEncargo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "En preparacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/traerPendientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"traerPendientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerTodos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1OTIyMzksImV4cCI6MTY2OTY1MjIzOSwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.qfDfy7kK_VaTOzwImvKXAv0f4UBLRTX5O9M-OQIeAFA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idEncargo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tiempoEstimado",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "En preparacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EntregarPedido",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1NjAzNzQsImV4cCI6MTY2OTYyMDM3NCwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMiwidGlwbyI6Ik1vem8ifSwiYXBwIjoiUHJhY3RpY2EifQ.EhTP1gLJtS856U301x7NQxpcTyYDAi1t3YlXuzy4y4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigoComanda",
+							"value": "dy5CI",
+							"type": "text"
+						},
+						{
+							"key": "estadoEncargo",
+							"value": "Servido",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/encargos/entregarEncargos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"encargos",
+						"entregarEncargos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PedirCuenta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigoComanda",
+							"value": "dy5CI",
+							"type": "text"
+						},
+						{
+							"key": "estadoComanda",
+							"value": "Solicita cuenta",
+							"type": "text"
+						},
+						{
+							"key": "nombreCliente",
+							"value": "Ariadna",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/comandas/pedirCuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"comandas",
+						"pedirCuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EntregarCuenta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1NjAzNzQsImV4cCI6MTY2OTYyMDM3NCwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMiwidGlwbyI6Ik1vem8ifSwiYXBwIjoiUHJhY3RpY2EifQ.EhTP1gLJtS856U301x7NQxpcTyYDAi1t3YlXuzy4y4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigoComanda",
+							"value": "dy5CI",
+							"type": "text"
+						},
+						{
+							"key": "estadoComanda",
+							"value": "Con cliente pagando",
+							"type": "text"
+						},
+						{
+							"key": "nombreCliente",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/comandas/entregarCuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"comandas",
+						"entregarCuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CerrarMesa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Njk1ODg2MTEsImV4cCI6MTY2OTY0ODYxMSwiYXVkIjoiMDY4YWY3MGJkNzUzMjdhNjcyYjYzM2JmNTM3OWFlMTY2NmMwMjI0OSIsImRhdGEiOnsiaWQiOjEwMCwidGlwbyI6IlNvY2lvIn0sImFwcCI6IlByYWN0aWNhIn0.uKtwuDPrSNvPRUD6L1Yu-_o7oCaiBmgMxDwgxcO58DQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigoComanda",
+							"value": "dy5CI",
+							"type": "text"
+						},
+						{
+							"key": "estadoComanda",
+							"value": "Cerrado",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:666/mesas/cerrar/mesa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"mesas",
+						"cerrar",
+						"mesa"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
